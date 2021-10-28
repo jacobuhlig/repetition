@@ -12,7 +12,7 @@ public class Animal {
     public Animal(String species, int age, boolean warmblooded) {
         this.species = species;
         this.age = age;
-        this.warmblooded = warmOrColdBlooded;
+        this.warmblooded = warmblooded;
     }
 
     public void run() {
