@@ -16,12 +16,26 @@ public class Main {
         }
 
         //prints the values vertically using a for-each loop
-        for (int num : numbers ) {
+        /*for (int num : numbers ) {
             System.out.println(num);
-        }
+        }*/
 
         int numberToRemoveAllMultipliers = scan.nextInt();
-        int amountOfTimesNumberMultiplies = 100 / numberToRemoveAllMultipliers;
+
+        //modulus version - start
+        for (int i = 0; i < numbers.size(); i++) {
+            if(numbers.get(i) == numberToRemoveAllMultipliers) {
+                continue;
+            }
+            if(numbers.get(i) % numberToRemoveAllMultipliers == 0) {
+                numbers.remove(i);
+                i -= 1;
+            }
+        }
+        //modulus version - end
+
+        //double for-loop with additional ArrayList version - start
+        /*int amountOfTimesNumberMultiplies = 100 / numberToRemoveAllMultipliers;
 
         ArrayList<Integer> multipliedNumbers = new ArrayList<>();
 
@@ -39,8 +53,11 @@ public class Main {
                     numbers.remove(j);
                 }
             }
-        }
+        }*/
+        //double for-loop with additional ArrayList version - end
 
+
+        //running the result of either version
         for (int num : numbers ) {
             System.out.println(num);
         }
